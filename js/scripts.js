@@ -1,54 +1,56 @@
-/*!
-* Start Bootstrap - Freelancer v7.0.3 (https://startbootstrap.com/theme/freelancer)
-* Copyright 2013-2021 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-freelancer/blob/master/LICENSE)
-*/
-//
-// Scripts
-// 
+"use strict";
 
-window.addEventListener('DOMContentLoaded', event => {
+const menuButton = document.getElementById("menu-button");
+const mainNavigation = document.getElementById("main-navigation");
+const themeButton = document.getElementById("theme-button");
+const currentYear = document.getElementById("current-year");
 
-    // Navbar shrink function
-    var navbarShrink = function () {
-        const navbarCollapsible = document.body.querySelector('#mainNav');
-        if (!navbarCollapsible) {
-            return;
-        }
-        if (window.scrollY === 0) {
-            navbarCollapsible.classList.remove('navbar-shrink')
-        } else {
-            navbarCollapsible.classList.add('navbar-shrink')
-        }
+currentYear.textContent = new Date().getFullYear();
 
-    };
+menuButton.addEventListener("click", function () {
+    const menuIsOpen = mainNavigation.classList.toggle("is-open");
+    menuButton.setAttribute("aria-expanded", String(menuIsOpen));
+});
 
-    // Shrink the navbar 
-    navbarShrink();
+mainNavigation.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+        mainNavigation.classList.remove("is-open");
+        menuButton.setAttribute("aria-expanded", "false");
+    });
+});
 
-    // Shrink the navbar when page is scrolled
-    document.addEventListener('scroll', navbarShrink);
+const savedTheme = localStorage.getItem("pravin-site-theme");
 
-    // Activate Bootstrap scrollspy on the main nav element
-    const mainNav = document.body.querySelector('#mainNav');
-    if (mainNav) {
-        new bootstrap.ScrollSpy(document.body, {
-            target: '#mainNav',
-            offset: 72,
-        });
-    };
+if (savedTheme === "dark") {
+    document.body.classList.add("dark-theme");
+}
 
-    // Collapse responsive navbar when toggler is visible
-    const navbarToggler = document.body.querySelector('.navbar-toggler');
-    const responsiveNavItems = [].slice.call(
-        document.querySelectorAll('#navbarResponsive .nav-link')
-    );
-    responsiveNavItems.map(function (responsiveNavItem) {
-        responsiveNavItem.addEventListener('click', () => {
-            if (window.getComputedStyle(navbarToggler).display !== 'none') {
-                navbarToggler.click();
+themeButton.addEventListener("click", function () {
+    document.body.classList.toggle("dark-theme");
+
+    const activeTheme = document.body.classList.contains("dark-theme")
+        ? "dark"
+        : "light";
+
+    localStorage.setItem("pravin-site-theme", activeTheme);
+});
+
+const revealElements = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(
+    function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
             }
         });
-    });
+    },
+    {
+        threshold: 0.12
+    }
+);
 
+revealElements.forEach(function (element) {
+    observer.observe(element);
 });
