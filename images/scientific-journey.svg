@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1050" viewBox="0 0 900 1050">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#10283d"/>
+      <stop offset="1" stop-color="#07131f"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="1050" fill="url(#bg)"/>
+
+  <g opacity="0.22" stroke="#62b7c8" fill="none">
+    <circle cx="190" cy="190" r="85" stroke-width="4"/>
+    <circle cx="190" cy="190" r="18" fill="#62b7c8"/>
+    <line x1="250" y1="250" x2="350" y2="350" stroke-width="4"/>
+    <circle cx="705" cy="195" r="58" stroke-width="4"/>
+    <circle cx="705" cy="195" r="13" fill="#62b7c8"/>
+    <line x1="665" y1="240" x2="590" y2="330" stroke-width="4"/>
+  </g>
+
+  <path d="M130 825 C245 700, 200 570, 360 500 C505 435, 510 295, 720 180" fill="none" stroke="#d99a3f" stroke-width="9" stroke-linecap="round" stroke-dasharray="2 25"/>
+
+  <circle cx="130" cy="825" r="28" fill="#d99a3f"/>
+  <circle cx="360" cy="500" r="28" fill="#d99a3f"/>
+  <circle cx="720" cy="180" r="28" fill="#d99a3f"/>
+
+  <g transform="translate(95 720)">
+    <rect width="220" height="125" rx="18" fill="#ffffff" opacity="0.09"/>
+    <text x="25" y="42" font-family="Inter, sans-serif" font-size="18" fill="#f2c57f">BIOTECHNOLOGY</text>
+    <text x="25" y="80" font-family="Georgia, serif" font-size="31" fill="#ffffff">Foundations</text>
+  </g>
+
+  <g transform="translate(305 390)">
+    <rect width="245" height="135" rx="18" fill="#ffffff" opacity="0.09"/>
+    <text x="25" y="43" font-family="Inter, sans-serif" font-size="18" fill="#f2c57f">CHEMISTRY</text>
+    <text x="25" y="82" font-family="Georgia, serif" font-size="31" fill="#ffffff">Mechanisms</text>
+  </g>
+
+  <g transform="translate(550 90)">
+    <rect width="260" height="145" rx="18" fill="#ffffff" opacity="0.09"/>
+    <text x="25" y="44" font-family="Inter, sans-serif" font-size="18" fill="#f2c57f">BIOPHYSICS</text>
+    <text x="25" y="84" font-family="Georgia, serif" font-size="31" fill="#ffffff">Single molecules</text>
+  </g>
+
+  <path d="M100 930 C250 820, 400 980, 565 850 C670 765, 760 810, 845 735" fill="none" stroke="#62b7c8" stroke-width="5" opacity="0.45"/>
+  <text x="95" y="990" font-family="Georgia, serif" font-size="46" fill="#ffffff">An interdisciplinary scientific path</text>
+</svg>
